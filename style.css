@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #101010;
+}
+.timeline{
+    width: 80%;
+    height: auto;
+    max-width: 50rem;
+    margin:7rem auto;
+    position: relative;
+}
+.timeline ul li{
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #1e1f22;
+    color: white;
+    border-radius:  0.7rem; ;
+}
+.timeline ul li:last-child{
+    margin-bottom: 0%;
+}
+.timeline-content h1{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2rem;
+    margin-bottom: 0.7rem;
+}
+.timeline-content p{
+    font-size: 1rem;
+    line-height: 1.8rem;
+    font-weight: 300;
+}
+.timeline-content .date{
+    font-size: 0.813rem;
+    font-weight: 300;
+    letter-spacing: 0.125rem;
+    margin-bottom: 0.625rem;
+}
+@media all and  (min-width:768px)
+{
+    .timeline::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 0.1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #777;
+    }
+    .timeline ul li{
+        width: 50%;
+        margin-bottom: 3.1rem;
+        position: relative;
+    }
+    .timeline ul li:nth-child(odd)
+    {
+        float: left;
+        clear: right;
+        transform: translateX(-1.8rem);
+        border-radius: 1.5rem 0rem 1.5rem 1.5rem;
+    }
+    .timeline ul li:nth-child(even)
+    {
+        float: right;
+        clear: left;
+        transform: translateX(1.8rem);
+        border-radius: 0rem 1.5rem 1.5rem 1.5rem;
+    }
+    .timeline ul li::after{
+        content: '';
+        position: absolute;
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        background-color: #777;
+        top: 0;
+    }
+    .timeline ul li:nth-child(odd)::after{
+        transform: translate(50%,-50%);
+        right: -1.8rem;
+    }
+    .timeline ul li:nth-child(even)::after{
+        transform: translate(-50%,-50%);
+        left: -1.8rem;
+    }
+    .timeline ul li:hover::after{
+        background-color: cyan;
+    }
+    .timeline-content .date{
+        position: absolute;
+        top: -1.8rem;
+    }
+}
